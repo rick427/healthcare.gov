@@ -1,0 +1,25 @@
+// src/styles/main.scss
+@use 'mixins' as *;
+@use 'variables' as *;
+@use 'functions' as *;
+
+/* Minimal CSS Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: $font-family;
+  line-height: 1.5;
+  background-color: $white-color;
+  color: $black-color;
+}

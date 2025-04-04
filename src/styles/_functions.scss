@@ -1,0 +1,4 @@
+// src/styles/_functions.scss
+@function px-to-rem($px, $base: $base-font-size) {
+    @return ($px / $base) * 1rem;
+}
