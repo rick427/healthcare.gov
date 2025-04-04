@@ -9,6 +9,8 @@ by running the following commands in the given sequence.
 
 ```
 npm run install
+```
 
-npm run  dev
-```js
+```
+npm run dev
+```
