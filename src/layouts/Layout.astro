@@ -1,5 +1,7 @@
 ---
 import "@styles/main.scss";
+import { ClientRouter } from "astro:transitions";
+import LoadingIndicator from "astro-loading-indicator/component";
 ---
 
 <!doctype html>
@@ -10,6 +12,9 @@ import "@styles/main.scss";
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Healthcare.gov | </title>
+
+		<ClientRouter />
+		<LoadingIndicator color="red" />
 	</head>
 	<body>
 		<slot />

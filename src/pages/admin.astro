@@ -1,6 +1,11 @@
 ---
 import Layout from "@layouts/Layout.astro";
 export const prerender = false; //On demand SSR, disables static pre-rendering on this page
+
+export async function get() {
+  await new Promise((resolve) => setTimeout(resolve, 5000)); // Delay for 3 seconds
+  return new Response(JSON.stringify({ message: "Delayed response" }), { status: 200 });
+}
 ---
 
 <Layout>
