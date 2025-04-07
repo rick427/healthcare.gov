@@ -1,8 +1,20 @@
 // src/styles/_variables.scss
-$primary-color: #3498db;
-$secondary-color: #2ecc71;
+$primary-color: #0B3484;
+$secondary-color: #00BCD4;
+$secondary-color-2: #D4F6FA;
+$orange-color: #D46A00;
+$blue-color: #04112C;
 
 $white-color: #ffffff;
-$black-color: #333333;
-$font-family: 'Helvetica Neue', sans-serif;
+$black-color: #001215;
+$gray-color: #FAFAFA;
+$gray-color-1: #f1f1f1;
+$font-family: "Schibsted Grotesk", sans-serif;
 $base-font-size: 16px;
+
+//@: Bootstrap breakpoints - DO NOT F**KING TOUCH THIS!
+$media-query-xl: 1400px;
+$media-query-lg: 1200px;
+$media-query-md: 992px;
+$media-query-sm: 768px;
+$media-query-xs: 576px;

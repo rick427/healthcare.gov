@@ -1,0 +1,53 @@
+---
+import { Image } from "astro:assets";
+
+import brand_01 from "@assets/brands/br-1.png";
+import brand_02 from "@assets/brands/br-2.png";
+import brand_03 from "@assets/brands/br-3.png";
+import brand_04 from "@assets/brands/br-4.png";
+import brand_05 from "@assets/brands/br-5.png";
+---
+
+<section class="brands">
+    <p class="brands__subtitle">
+        Trusted by <span>Leading Healthcare</span> Partners
+    </p>
+
+    <figure class="brands__row">
+        <Image src={brand_01} alt="" />
+        <Image src={brand_02} alt="" />
+        <Image src={brand_05} alt="" />
+        <Image src={brand_04} alt="" />
+        <Image src={brand_03} alt="" />
+    </figure>
+</section>
+
+<style lang="scss" scoped>
+    @use "@/styles/variables" as *;
+
+    .brands{
+        padding: 4rem 12rem;
+        background-color: $gray-color;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+
+        &__subtitle{
+            span{
+                color: $secondary-color;
+            }
+        }
+
+        &__row{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+
+            img{
+                width: 10rem;
+                height: 3.5rem;
+                object-fit: contain;
+            }
+        }
+    }
+</style>

@@ -1,0 +1,282 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+
+import plan_01 from "@assets/plan-1.png";
+import plan_02 from "@assets/plan-2.png";
+import plan_03 from "@assets/plan-3.png";
+---
+
+<section class="plans">
+    <div class="plans__row">
+        <div class="plans__row__ctx">
+            <p class="plans__row__ctx__subtitle">
+                Affordable Healthcare Plans
+            </p>
+            <h1 class="plans__row__ctx__title">
+                Transparent Pricing for Quality Medical Services
+            </h1>
+        </div>
+
+        <a class="plans__row__btn" href="/">
+            View All Plans
+        </a>
+    </div>
+
+    <div class="plans__grid">
+        <div class="plans__grid__col">
+            <figure class="plans__grid__col__icon">
+                <Image src={plan_01} alt="plan-1" />
+            </figure>
+            <h4 class="plans__grid__col__subtitle">
+                Basic Plan
+            </h4>
+            <p class="plans__grid__col__text">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                Eligendi, laudantium?
+            </p>
+
+            <h1 class="plans__grid__col__title">
+                $49.99 / Visit
+            </h1>
+
+            <button class="plans__grid__col__btn">
+                Get This Plan
+            </button>
+            <ul class="plans__grid__col__list">
+                <li>
+                    <Icon name="bi:check-circle-fill" size="18" />
+                    General Check-Up
+                </li>
+                <li>
+                    <Icon name="bi:check-circle-fill" size="18" />
+                    Basic Health Consultation
+                </li>
+                <li>
+                    <Icon name="bi:check-circle-fill" size="18" />
+                    Heart Rate Monitoring
+                </li>
+                <li>
+                    <Icon name="bi:check-circle-fill" size="18" />
+                    Online Appointment Booking
+                </li>
+            </ul>
+        </div>
+
+        <div class="plans__grid__col">
+            <figure class="plans__grid__col__icon">
+                <Image src={plan_02} alt="plan-2" />
+            </figure>
+            <h4 class="plans__grid__col__subtitle">
+                Standard Plan
+            </h4>
+            <p class="plans__grid__col__text">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                Eligendi, laudantium?
+            </p>
+
+            <h1 class="plans__grid__col__title">
+                $99.99 / Visit
+            </h1>
+
+            <button class="plans__grid__col__btn">
+                Get This Plan
+            </button>
+            <ul class="plans__grid__col__list">
+                <li>
+                    <Icon name="bi:check-circle-fill" size="18" />
+                    Specialist Consultation
+                </li>
+                <li>
+                    <Icon name="bi:check-circle-fill" size="18" />
+                    Lab Tests & Diagnostics
+                </li>
+                <li>
+                    <Icon name="bi:check-circle-fill" size="18" />
+                    Heart Rate Monitoring
+                </li>
+                <li>
+                    <Icon name="bi:check-circle-fill" size="18" />
+                    Online Appointment Booking
+                </li>
+            </ul>
+        </div>
+
+        <div class="plans__grid__col">
+            <figure class="plans__grid__col__icon">
+                <Image src={plan_03} alt="plan-3" />
+            </figure>
+            <h4 class="plans__grid__col__subtitle">
+                Premium Plan
+            </h4>
+            <p class="plans__grid__col__text">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                Eligendi, laudantium?
+            </p>
+
+            <h1 class="plans__grid__col__title">
+                $149.99 / Visit
+            </h1>
+
+            <button class="plans__grid__col__btn">
+                Get This Plan
+            </button>
+            <ul class="plans__grid__col__list">
+                <li>
+                    <Icon name="bi:check-circle-fill" size="18" />
+                    Priority Appointments
+                </li>
+                <li>
+                    <Icon name="bi:check-circle-fill" size="18" />
+                    Basic Health Consultation
+                </li>
+                <li>
+                    <Icon name="bi:check-circle-fill" size="18" />
+                    Home Visit Doctor
+                </li>
+                <li>
+                    <Icon name="bi:check-circle-fill" size="18" />
+                    Online Appointment Booking
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<style lang="scss" scoped>
+    @use "@/styles/variables" as *;
+
+    [data-icon]{
+        color: $secondary-color;
+    }
+
+    .plans{
+        padding: 8rem 12rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        background-color: $blue-color;
+
+        &__row{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            &__ctx{
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+                color: $white-color;
+
+                &__subtitle{
+                    font-size: 0.9rem;
+                    font-weight: 500;
+                    font-style: italic;
+                    color: $secondary-color;
+                }
+
+                &__title{
+                    font-size: 3rem;
+                    font-weight: 500;
+                    line-height: 2ch;
+                    width: min(45rem, 100%);
+                }
+            }
+
+            &__btn{
+                width: 14rem;
+                height: 3rem;
+                background-color: $primary-color;
+                color: $white-color;
+                border: 1px solid transparent;
+                font-size: 0.8rem;
+                font-weight: 400;
+                letter-spacing: 0.1ch;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &:hover{
+                    background-color: $secondary-color;
+                    cursor: pointer;
+                    transition: all .2s ease;
+                }
+            }
+        }
+
+        &__grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+
+            &__col{
+                display: flex;
+                flex-direction: column;
+                border: 1px solid #FFFFFF3B;
+                padding: 2rem;
+                gap: 1.5rem;
+
+                &:nth-child(2){
+                    background-color: #0B3484;
+
+                    figure{
+                        background-color: $blue-color;
+                    }
+
+                    button{
+                        background-color: $white-color;
+                        color: $black-color;
+                    }
+                }
+
+                &__icon{
+                    width: 4rem; 
+                    height: 4rem;
+                    background-color: $primary-color;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                &__subtitle{
+                    color: $white-color;
+                    font-weight: 500;
+                }
+
+                &__text{
+                    color: $gray-color-1;
+                    opacity: 0.5;
+                    font-size: 0.85rem;
+                }
+
+                &__title{
+                    color: $white-color;
+                    font-size: 2rem;
+                    font-weight: 500;
+                }
+
+                &__btn{
+                    background-color: $primary-color;
+                    border: 1px solid transparent;
+                    padding: 1rem;
+                    color: $white-color;
+                }
+
+                &__list{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+
+                    > li{
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+                        color: $white-color;
+                        font-weight: 500;
+                        font-size: 0.85rem;
+                    }
+                }
+            }
+        }
+    }
+</style>

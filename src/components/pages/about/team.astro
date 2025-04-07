@@ -1,0 +1,180 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+
+import team_01 from "@assets/about-us/team-1.jpg";
+import team_02 from "@assets/about-us/team-2.jpg";
+import team_03 from "@assets/about-us/team-3.jpg";
+---
+
+<section class="team">
+    <div class="team__row">
+        <div class="team__row__ctx">
+            <p class="team__row__ctx__subtitle">
+                Trusted by Thousands
+            </p>
+            <h1 class="team__row__ctx__title">
+                Skilled Specialists Providing Exceptional Care
+            </h1>
+        </div>
+
+        <a class="team__row__btn" href="/">
+            View Full Team
+        </a>
+    </div>
+
+    <div class="team__grid">
+        <div class="team__grid__col">
+            <Image src={team_01} alt="team-1" />
+            <div class="team__grid__col__ctx">
+                <h4>Dr. Adrian Mahesa</h4>
+                <h6>Chief Medical Officer</h6>
+            </div>
+            <div class="team__grid__col__badge">
+                <Icon name="bi:facebook" size="18" /> 
+                <Icon name="bi:twitter-x" size="18" /> 
+                <Icon name="bi:linkedin" size="18" /> 
+                <Icon name="bi:instagram" size="18" /> 
+            </div>
+        </div>
+        <div class="team__grid__col">
+            <Image src={team_03} alt="team-1" />
+            <div class="team__grid__col__ctx">
+                <h4>Dr. Karina Putri</h4>
+                <h6>Senior Cardiologist</h6>
+            </div>
+            <div class="team__grid__col__badge">
+                <Icon name="bi:facebook" size="18" /> 
+                <Icon name="bi:twitter-x" size="18" /> 
+                <Icon name="bi:linkedin" size="18" /> 
+                <Icon name="bi:instagram" size="18" /> 
+            </div>
+        </div>
+        <div class="team__grid__col">
+            <Image src={team_02} alt="team-1" />
+            <div class="team__grid__col__ctx">
+                <h4>Dr. Rizky Pratama</h4>
+                <h6>Lead Pediatrician</h6>
+            </div>
+            <div class="team__grid__col__badge">
+                <Icon name="bi:facebook" size="18" /> 
+                <Icon name="bi:twitter-x" size="18" /> 
+                <Icon name="bi:linkedin" size="18" /> 
+                <Icon name="bi:instagram" size="18" /> 
+            </div>
+        </div>
+    </div>
+</section>
+
+<style lang="scss" scoped>
+    @use "@/styles/variables" as *;
+
+    .team{
+        padding: 8rem 12rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        &__row{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            &__ctx{
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+
+                &__subtitle{
+                    font-size: 0.9rem;
+                    font-weight: 500;
+                    font-style: italic;
+                    color: $secondary-color;
+                }
+
+                &__title{
+                    font-size: 3rem;
+                    font-weight: 500;
+                    line-height: 2ch;
+                    width: min(45rem, 100%);
+                }
+            }
+
+            &__btn{
+                width: 14rem;
+                height: 3rem;
+                background-color: $primary-color;
+                color: $white-color;
+                border: 1px solid transparent;
+                font-size: 0.8rem;
+                font-weight: 400;
+                letter-spacing: 0.1ch;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &:hover{
+                    background-color: $secondary-color;
+                    cursor: pointer;
+                    transition: all .2s ease;
+                }
+            }
+        }
+
+        &__grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+
+            &__col{
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+                position: relative;
+
+                > img{
+                    width: 100%;
+                    height: 25rem;
+                    object-fit: cover;
+                    border: 1px solid $gray-color-1;
+                }
+
+                &__ctx{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 0.3rem;
+
+                    > h4{
+                        font-size: 1.5rem;
+                        font-weight: 500;
+                    }
+
+                    >h6 {
+                        font-size: 0.9rem;
+                        font-weight: 500;
+                        color: $secondary-color;
+                        font-style: italic;
+                    }
+                }
+
+                &__badge{
+                    position: absolute;
+                    top: -1.5rem;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    z-index: 1;
+                    background-color: $white-color;
+                    padding: 0.8rem 2rem;
+                    display: flex;
+                    gap: 1rem;
+                    justify-content: center;
+                    align-items: center;
+                    border: 1px solid $gray-color-1;
+                }
+            }
+        }
+    }
+</style>

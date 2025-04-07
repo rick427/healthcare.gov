@@ -1,0 +1,78 @@
+---
+import { Image } from "astro:assets";
+import metrics_bg from "@assets/about-us/metrics.jpg";
+---
+
+<section class="metrics">
+    <Image class="metrics__img" src={metrics_bg} alt="metrics" />
+    <div class="metrics__col">
+        <p class="metrics__col__subtitle">
+            Skilled Professionals, Superior Care
+        </p>
+        <h1 class="metrics__col__title">
+            Expertise You Can Trust for Your Health and Well-Being
+        </h1>
+        <a class="metrics__col__btn" href="/">
+            Explore our Expertise
+        </a>
+    </div>
+</section>
+
+<style lang="scss" scoped>
+    @use "@/styles/variables" as *;
+
+    .metrics{
+        padding: 8rem 12rem;
+        display: flex;
+        align-items: flex-start;
+        gap: 2rem;
+        background-color: $gray-color;
+
+        &__img{
+            width: 30rem;
+            height: 35rem;
+        }
+
+        &__col{
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            border: 1px solid red;
+
+            &__subtitle{
+                font-size: 0.9rem;
+                font-weight: 500;
+                font-style: italic;
+                color: $secondary-color;
+            }
+
+            &__title{
+                font-size: 2.8rem;
+                font-weight: 500;
+                line-height: 2ch;
+                width: min(45rem, 100%);
+            }
+
+            &__btn{
+                align-self: baseline;
+                width: 14rem;
+                height: 3rem;
+                background-color: $primary-color;
+                color: $white-color;
+                border: 1px solid transparent;
+                font-size: 0.8rem;
+                font-weight: 400;
+                letter-spacing: 0.1ch;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &:hover{
+                    background-color: $secondary-color;
+                    cursor: pointer;
+                    transition: all .2s ease;
+                }
+            }
+        }
+    }
+</style>
