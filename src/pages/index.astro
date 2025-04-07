@@ -1,11 +1,22 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import Hero from "@components/pages/home/hero.astro";
+import AboutUs from "@components/pages/home/about.astro";
+import Brands from "@components/pages/home/brands.astro";
+import Services from "@components/pages/home/services.astro";
+import Features from "@components/pages/home/features.astro";
+import Booking from "@components/pages/home/booking.astro";
+import Reviews from "@components/pages/home/reviews.astro";
+import CallToAction from "@components/pages/home/call-to-action.astro";
 ---
 
 <Layout>
-	<h1>HOME PAGE (STATIC SITE)</h1>
-	
-	<a href="/admin">Admin Page</a>
-	<a href="/about">About Page</a>
-	<a href="/contact">Contact Page</a>
+	<Hero />
+	<Brands />
+	<AboutUs />
+	<Services />
+	<Features />
+	<Booking />
+	<Reviews />
+	<CallToAction />
 </Layout>

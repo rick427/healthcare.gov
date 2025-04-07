@@ -1,0 +1,182 @@
+---
+import { Image } from "astro:assets";
+import booking_02 from "@assets/booking-2.jpg";
+---
+
+<section class="booking">
+    <div class="booking__col">
+        <div class="booking__col__ctx">
+            <p class="booking__col__ctx__subtitle">
+                Book Your Appointment Today
+            </p>
+            <h1 class="booking__col__ctx__title">
+                Quick, Easy, and Hassle-Free Healthcare Scheduling
+            </h1>
+        </div>
+
+        <form class="booking__col__form">
+            <div class="booking__col__form__group">
+                <div class="booking__col__form__el">
+                    <label for="name">Full Name</label>
+                    <input name="name" type="text" placeholder="Enter your full name" required autocomplete="off">
+                </div>
+                <div class="booking__col__form__el">
+                    <label for="email">Email Address</label>
+                    <input name="email" type="email" placeholder="Enter your email" required autocomplete="off">
+                </div>
+            </div>
+            <div class="booking__col__form__group">
+                <div class="booking__col__form__el">
+                    <label for="phone">Phone Number</label>
+                    <input name="phone" type="text" placeholder="Enter your phone number" required autocomplete="off">
+                </div>
+                <div class="booking__col__form__el">
+                    <label for="date">Preferred Date</label>
+                    <input name="date" type="date" placeholder="Enter your preferred date" required autocomplete="off">
+                </div>
+            </div>
+            <div class="booking__col__form__el">
+                <label for="service">Select Medical Service</label>
+                <select name="service" required>
+                    <option>Choose a medical service</option>
+                </select>
+            </div>
+            <div class="booking__col__form__el">
+                <label for="notes">Additional Notes</label>
+                <textarea rows="6" name="notes" placeholder="Any specific conditions?" autocomplete="off" />
+            </div>
+            <button class="booking__col__form__btn" type="submit">
+                Book an Appointment
+            </button>
+        </form>
+    </div>
+
+    <div class="booking__col">
+        <Image src={booking_02} alt="booking-2" />
+        <div class="booking__col__bg">
+            <h4>24/7 Emergency Support</h4>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing 
+                elit. Facilis, laudantium.
+            </p>
+            <button>Call for Urgent Care</button>
+        </div>
+    </div>
+</section>
+
+<style lang="scss" scoped>
+    @use "@/styles/variables" as *;
+
+    .booking{
+        padding: 8rem 12rem;
+        background-color: $gray-color;
+        display: flex;
+        flex-direction: row;
+        gap: 3rem;
+
+        &__col{
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+
+            &__ctx{
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+
+                &__subtitle{
+                    font-size: 0.9rem;
+                    font-weight: 500;
+                    font-style: italic;
+                    color: $secondary-color;
+                }
+
+                &__title{
+                    font-size: 3rem;
+                    font-weight: 500;
+                    line-height: 2ch;
+                    width: min(45rem, 100%);
+                }
+            }
+
+            &__form{
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                margin-top: 1rem;
+
+                &__group{
+                    display: flex;
+                    align-items: center;
+                    gap: 2rem;
+                }
+
+                &__el{
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.5rem;
+
+                    > label{
+                        font-size: 0.9rem;
+                    }
+
+                    input,select,textarea{
+                        padding: 1rem;
+                        border: 1px solid $gray-color-1;
+                        font-family: inherit;
+
+                        &::placeholder{
+                            opacity: 0.65;
+                        }
+
+                        &:focus{
+                            transition: all 50ms linear;
+                            outline: 1px solid $primary-color;
+                        }
+                    }
+                }
+
+                &__btn{
+                    align-self: baseline;
+                    width: 14rem;
+                    height: 3rem;
+                    background-color: $primary-color;
+                    color: $white-color;
+                    border: 1px solid transparent;
+                    font-size: 0.8rem;
+                    font-weight: 400;
+                    letter-spacing: 0.1ch;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    &:hover{
+                        background-color: $secondary-color;
+                        cursor: pointer;
+                        transition: all .2s ease;
+                    }
+                }
+            }
+
+            > img{
+                width: 28rem;
+                height: 18rem;
+                object-fit: cover;
+            }
+
+            &__bg{
+                width: 28rem;
+                height: 30rem;
+                padding: 2rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-end;
+                text-align: center;
+                gap: 1rem;
+                background: url(@/assets/booking-1.jpg) no-repeat center center / cover;
+            }
+        }
+    }
+</style>

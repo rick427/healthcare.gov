@@ -10,7 +10,7 @@ To run the project, clone or download the repository off the main branch. Open t
 by running the following commands in the given sequence.
 
 ```
-npm run install
+npm install
 ```
 
 ```

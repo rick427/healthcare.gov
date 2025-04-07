@@ -1,0 +1,173 @@
+---
+import { Image } from "astro:assets";
+import hero_01 from "@assets/hero-01.png";
+import hero_02 from "@assets/hero-02.jpg";
+---
+
+<section class="hero">
+    <div class="hero__col">
+        <span class="hero__col__subtitle">
+            Better Care, Better Life
+        </span>
+        <div>
+            <h1 class="hero__col__title">
+                Trusted Healthcare Services Designed 
+                for Your Well-Being.
+            </h1>
+            <p class="hero__col__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Tempore esse perspiciatis totam ex alias enim! Accusamus 
+                aperiam ut laborum sequi?
+            </p>
+        </div>
+        <a class="hero__col__btn">
+            Book an Appointment
+        </a>
+    </div>
+
+    <div class="hero__row">
+        <span>20+ Medical Specialties</span>
+        <figure class="hero__row__figs">
+            <Image width={40} height={40} src="https://media.licdn.com/dms/image/v2/D4D03AQF9nP4Vk3MElg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1671910950823?e=1749686400&v=beta&t=lElG7O4V5iZ7vNaYwHnh5HjmeXzW_M250O8YoJ9i2l8" alt="" />
+            <Image width={40} height={40} src="https://media.licdn.com/dms/image/v2/D4D03AQEGhjgShEf5Sg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1667670329624?e=1749686400&v=beta&t=YYmySaRt2xzEIHAV6vv46A66cuVn7fOdek-RnHCafi0" alt="" />
+            <Image width={40} height={40} src="https://randomuser.me/api/portraits/women/24.jpg" alt="" />
+        </figure>
+    </div>
+
+    <figure class="hero__fig">
+        <Image src={hero_01} alt="hero-01">
+    </figure>
+
+    <figure class="hero__vid">
+        <Image src={hero_02} alt="hero-02" />
+    </figure>
+</section>
+
+
+<style lang="scss" scoped>
+    @use "@/styles/variables" as *;
+
+    .hero{
+        min-height: 100vh;
+        background: url(@/assets/hero-bg.jpg) no-repeat center center / cover;
+        padding: 8rem 12rem 4rem 12rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 4rem;
+        position: relative;
+        overflow: hidden;
+
+        &__col{
+            width: min(40rem, 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: baseline;
+            gap: 2rem;
+
+            &__subtitle{
+                font-size: 0.9rem;
+                font-weight: 500;
+                font-style: italic;
+                color: $primary-color;
+            }
+
+            &__title{
+                font-size: 3.5rem;
+                font-weight: 500;
+                line-height: 2ch;
+            }
+
+            &__text{
+                width: 90%;
+                font-weight: 300;
+                margin-top: 0.5rem;
+            }
+
+            &__btn{
+                width: 14rem;
+                height: 3rem;
+                background-color: $primary-color;
+                color: $white-color;
+                border: 1px solid transparent;
+                font-size: 0.8rem;
+                font-weight: 400;
+                letter-spacing: 0.1ch;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &:hover{
+                    background-color: $secondary-color;
+                    cursor: pointer;
+                    transition: all .2s ease;
+                }
+            }
+        }
+
+        &__row{
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            border: 1px solid $gray-color;
+            background-color: $gray-color-1;
+            align-self: baseline;
+            padding: 0.2rem 1rem;
+            border-radius: 50px;
+
+            span{
+                font-size: 0.85rem;
+                padding-left: 1rem;
+            }
+
+            &__figs{
+                display: flex;
+                align-items: center;
+
+                img{
+                    direction: rtl;
+                    border-radius: 50%;
+                    text-align: right;
+                    margin-right: -10px;
+                    padding-right: -10px;
+                    border: 1px solid white;
+                }
+            }
+        }
+
+        &__fig{
+            width: 30rem;
+            height: 45rem;
+            position: absolute;
+            bottom: 0;
+            right: 12rem;
+            //outline: 1px solid red;
+
+            @media screen and (max-width: $media-query-xl){
+                display: none;
+            }
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+
+        &__vid{
+            width: 12rem;
+            height: 10rem;
+            position: absolute;
+            right: 32rem;
+            bottom: 10rem;
+            border-radius: 0.3rem;
+            overflow: hidden;
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+</style>

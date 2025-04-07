@@ -1,0 +1,123 @@
+---
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout>
+    <section class="login">
+        <div class="login__el">
+            <h1 class="login__el__title">
+                Login
+            </h4>
+            <p class="login__el__text">
+                Don't have a Healthcare account?
+                <a href="/register">Create an account</a> to access our systems.
+            </p>
+            <form class="login__el__form">
+                <div class="login__el__form__group">
+                    <label for="email">Email Address</label>
+                    <input name="email" type="email" placeholder="Enter your email address" required>
+                </div>
+                <div class="login__el__form__group">
+                    <label for="password">Password</label>
+                    <input name="password" type="password" placeholder="Enter your password" required>
+                </div>
+                <button class="login__el__form__btn" type="submit">
+                    Login to Healthcare
+                </button>
+
+                <p class="login__el__text">
+                    Having trouble logging in? <a href="/">Reset your password</a>
+                </p>
+            </form>
+        </div>
+    </section>
+</Layout>
+
+<style lang="scss" scoped>
+    @use "@/styles/variables" as *;
+
+    .login{
+        min-height: 100vh;
+        padding: 8rem 12rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &__el{
+            width: 30rem;
+            padding: 2rem;
+            background-color: $gray-color;
+            border: 1px solid $gray-color-1;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+
+            &__title{
+                font-size: 1.8rem;
+                font-weight: 500;
+            }
+
+            &__text{
+                font-size: 0.9rem;
+
+                a{
+                    color: $primary-color;
+                    font-weight: 500;
+                    text-decoration: underline;
+                }
+            }
+
+            &__form{
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+
+                &__group{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.5rem;
+
+                    > label{
+                        font-size: 0.8rem;
+                        font-weight: 500;
+                    }
+
+                    input{
+                        padding: 1rem;
+                        border: 1px solid $gray-color-1;
+                        font-family: inherit;
+
+                        &::placeholder{
+                            opacity: 0.65;
+                        }
+
+                        &:focus{
+                            transition: all 50ms linear;
+                            outline: 1px solid $primary-color;
+                        }
+                    }
+                }
+
+                &__btn{
+                    height: 3rem;
+                    background-color: $primary-color;
+                    color: $white-color;
+                    border: 1px solid transparent;
+                    font-size: 0.8rem;
+                    font-weight: 400;
+                    letter-spacing: 0.1ch;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    &:hover{
+                        background-color: $secondary-color;
+                        cursor: pointer;
+                        transition: all .2s ease;
+                    }
+                }
+            }
+        }
+    }
+</style>

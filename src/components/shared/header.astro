@@ -1,0 +1,110 @@
+---
+import { Image } from "astro:assets";
+import logo from "@assets/logo.png";
+---
+
+<header class="header">
+    <nav class="nav">
+        <a href="/">
+            <Image class="nav__logo" src={logo} alt="logo" />
+        </a>
+
+        <div class="nav__group">
+            <ul class="nav__group__list">
+                <li>
+                    <a href="/about">About Us</a>
+                </li>
+                <li>
+                    <a href="/services">Services</a>
+                </li>
+                <li>
+                    <a href="/contact">Contact Us</a>
+                </li>
+            </ul>
+
+            <a href="/login" class="nav__group__btn">
+                Get Started Now
+            </a>
+        </div>
+    </nav>
+</header>
+
+<style lang="scss" scoped>
+    @use "@/styles/variables" as *;
+
+    .header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: transparent;
+        padding: 1.5rem 12rem;
+        height: 6rem;
+        z-index: 5;
+        transition: all .2s ease-in-out;
+        border-bottom: 1px solid transparent;
+
+        &.scrolled {
+            background-color: $white-color;
+            border-bottom: 1px solid $gray-color-1;
+        }
+
+        .nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &__logo{
+                width: 10rem;
+                height: 3rem;
+                margin-right: 4rem;
+                object-fit: cover;
+                position: absolute;
+                top: 50%;
+                left: 10.5rem;
+                transform: translateY(-50%);
+            }
+
+            &__group{
+                display: flex;
+                align-items: center;
+                gap: 2rem;
+
+                &__list{
+                    display: flex;
+                    align-items: center;
+                    gap: 2rem;
+
+                    > li{
+                        cursor: pointer;
+
+                        a{
+                            font-size: 0.9rem;
+                            color: $black-color;
+                        }
+                    }
+                }
+
+                &__btn{
+                    width: 10rem;
+                    height: 3rem;
+                    background-color: $primary-color;
+                    color: $white-color;
+                    border: 1px solid transparent;
+                    font-size: 0.8rem;
+                    font-weight: 400;
+                    letter-spacing: 0.1ch;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    &:hover{
+                        background-color: $secondary-color;
+                        cursor: pointer;
+                        transition: all .2s ease;
+                    }
+                }
+            }
+        }
+    }
+</style>

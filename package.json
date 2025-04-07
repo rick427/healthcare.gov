@@ -13,5 +13,9 @@
     "astro": "^5.6.1",
     "astro-loading-indicator": "^0.7.0",
     "sass": "^1.86.3"
+  },
+  "devDependencies": {
+    "@iconify-json/bi": "^1.2.2",
+    "astro-icon": "^1.1.5"
   }
 }

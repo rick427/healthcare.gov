@@ -1,0 +1,161 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<section class="values">
+    <div class="values__ctx">
+        <p class="values__ctx__subtitle">Guided by Strong Values</p>
+        <h1 class="values__ctx__title">
+            Delivering Healthcare with Integrity, Compassion, and Excellence
+        </h1>
+    </div>
+
+    <div class="values__grid">
+        <div class="values__grid__col">
+            <div class="values__grid__col__icon">
+                <Icon name="bi:shield-shaded" size="22" />
+            </div>
+            <h4 class="values__grid__col__title">
+                Integrity & Transparency
+            </h4>
+            <p class="values__grid__col__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Est cupiditate fugit perferendis culpa cumque!
+            </p>
+        </div>
+        <div class="values__grid__col">
+            <div class="values__grid__col__icon">
+                <Icon name="bi:heart-fill" size="22" />
+            </div>
+            <h4 class="values__grid__col__title">
+                Compassionate Care
+            </h4>
+            <p class="values__grid__col__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Est cupiditate fugit perferendis culpa cumque!
+            </p>
+        </div>
+        <div class="values__grid__col">
+            <div class="values__grid__col__icon">
+                <Icon name="bi:pie-chart-fill" size="22" />
+            </div>
+            <h4 class="values__grid__col__title">
+                Innovation & Excellence
+            </h4>
+            <p class="values__grid__col__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Est cupiditate fugit perferendis culpa cumque!
+            </p>
+        </div>
+        <div class="values__grid__col">
+            <div class="values__grid__col__icon">
+                <Icon name="bi:person-fill" size="22" />
+            </div>
+            <h4 class="values__grid__col__title">
+                Patient-Centered Approach
+            </h4>
+            <p class="values__grid__col__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Est cupiditate fugit perferendis culpa cumque!
+            </p>
+        </div>
+        <div class="values__grid__col">
+            <div class="values__grid__col__icon">
+                <Icon name="bi:people-fill" size="22" />
+            </div>
+            <h4 class="values__grid__col__title">
+                Collaboration & Teamwork
+            </h4>
+            <p class="values__grid__col__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Est cupiditate fugit perferendis culpa cumque!
+            </p>
+        </div>
+        <div class="values__grid__col">
+            <div class="values__grid__col__icon">
+                <Icon name="bi:globe-europe-africa" size="22" />
+            </div>
+            <h4 class="values__grid__col__title">
+                Accessibility & Inclusion
+            </h4>
+            <p class="values__grid__col__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Est cupiditate fugit perferendis culpa cumque!
+            </p>
+        </div>
+    </div>
+</section>
+
+<style lang="scss" scoped>
+    @use "@/styles/variables" as *;
+
+    [data-icon]{
+        color: $secondary-color;
+    }
+
+    .values{
+        padding: 8rem 12rem;
+        display: flex;
+        flex-direction: column;
+        gap: 6rem;
+
+        &__ctx{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+
+            &__subtitle{
+                font-size: 0.9rem;
+                font-weight: 500;
+                font-style: italic;
+                color: $secondary-color;
+            }
+
+            &__title{
+                font-size: 3rem;
+                font-weight: 500;
+                line-height: 2ch;
+                text-align: center;
+                width: min(60rem, 100%);
+            }
+        }
+
+        &__grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+
+            &__col{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 1rem;
+                text-align: center;
+
+                &__icon{
+                    width: 5rem;
+                    height: 5rem;
+                    border-radius: 50%;
+                    background-color: $gray-color-1;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                &__title{
+                    font-size: 1.5rem;
+                    font-weight: 500;
+                    line-height: 2.5ch;
+                }
+
+                &__text{
+                    font-size: 0.9rem;
+                    opacity: 0.7;
+                }
+            }
+        }
+    }
+</style>

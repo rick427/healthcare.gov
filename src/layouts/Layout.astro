@@ -1,6 +1,8 @@
 ---
 import "@styles/main.scss";
 import { ClientRouter } from "astro:transitions";
+import Header from "@components/shared/header.astro";
+import Footer from "@components/shared/footer.astro";
 import LoadingIndicator from "astro-loading-indicator/component";
 ---
 
@@ -10,6 +12,9 @@ import LoadingIndicator from "astro-loading-indicator/component";
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 		<meta name="generator" content={Astro.generator} />
 		<title>Healthcare.gov | </title>
 
@@ -17,6 +22,27 @@ import LoadingIndicator from "astro-loading-indicator/component";
 		<LoadingIndicator color="red" />
 	</head>
 	<body>
+		<Header />
 		<slot />
+		<Footer />
+
+		<!-- Persistent scroll listener script -->
+		<script is:inline type="module">
+			function updateHeaderScroll() {
+				const header = document.querySelector('.header');
+				if (header) {
+					if (window.scrollY > 10) {
+						header.classList.add('scrolled');
+					} else {
+						header.classList.remove('scrolled');
+					}
+				}
+			}
+	  
+			// Attach scroll listener once, so it persists across route changes
+			window.addEventListener('scroll', updateHeaderScroll);
+			// Run once on initial load
+			updateHeaderScroll();
+		</script>
 	</body>
 </html>

@@ -1,0 +1,181 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from 'astro-icon/components';
+---
+
+<section class="reviews">
+    <p class="reviews__subtitle">Trusted by Thousands</p>
+    <h1 class="reviews__title">
+        Hear from Those Who Trust Us with Their Health
+    </h1>
+
+    <div class="reviews__grid">
+        <div class="reviews__grid__card">
+            <h4 class="reviews__grid__card__title">
+                Highly Recommended
+            </h4>
+            <div class="reviews__grid__card__ratings">
+                {[...Array(5).keys()].map((_, _idx) => (
+                    <Icon name="bi:star-fill" size="16" />
+                ))}
+            </div>
+            <p class="reviews__grid__card__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Tenetur sint a omnis recusandae dolorem voluptas!
+            </p>
+            <div class="reviews__grid__card__divider" />
+            <div class="reviews__grid__card__user">
+                <h5>Richard Njoku</h5>
+                <h6> Tech Lead</h6>
+            </div>
+
+            <Image class="reviews__grid__card__avatar" width={100} height={100} src="https://media.licdn.com/dms/image/v2/D4D03AQF9nP4Vk3MElg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1671910950823?e=1749686400&v=beta&t=lElG7O4V5iZ7vNaYwHnh5HjmeXzW_M250O8YoJ9i2l8"  alt="user" />
+        </div>
+
+        <div class="reviews__grid__card">
+            <h4 class="reviews__grid__card__title">
+                Excellent Service
+            </h4>
+            <div class="reviews__grid__card__ratings">
+                {[...Array(5).keys()].map((_, _idx) => (
+                    <Icon name="bi:star-fill" size="16" />
+                ))}
+            </div>
+            <p class="reviews__grid__card__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Tenetur sint a omnis recusandae dolorem voluptas!
+            </p>
+            <div class="reviews__grid__card__divider" />
+            <div class="reviews__grid__card__user">
+                <h5>Kevin Omyonga</h5>
+                <h6> Matatu Driver</h6>
+            </div>
+
+            <Image class="reviews__grid__card__avatar" width={100} height={100} src="https://media.licdn.com/dms/image/v2/D4D03AQEGhjgShEf5Sg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1667670329624?e=1749686400&v=beta&t=YYmySaRt2xzEIHAV6vv46A66cuVn7fOdek-RnHCafi0"  alt="user" />
+        </div>
+
+        <div class="reviews__grid__card">
+            <h4 class="reviews__grid__card__title">
+                Professional & Kind
+            </h4>
+            <div class="reviews__grid__card__ratings">
+                {[...Array(5).keys()].map((_, _idx) => (
+                    <Icon name="bi:star-fill" size="16" />
+                ))}
+            </div>
+            <p class="reviews__grid__card__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Tenetur sint a omnis recusandae dolorem voluptas!
+            </p>
+            <div class="reviews__grid__card__divider" />
+            <div class="reviews__grid__card__user">
+                <h5>Kevin Feige</h5>
+                <h6>Head of Marvel Studios</h6>
+            </div>
+
+            <Image class="reviews__grid__card__avatar" width={100} height={100} src="https://randomuser.me/api/portraits/men/67.jpg"  alt="user" />
+        </div>
+    </div>
+</section>
+
+<style lang="scss" scoped>
+    @use "@/styles/variables" as *;
+
+    [data-icon]{
+        color: $orange-color;
+    }
+
+    .reviews{
+        padding: 8rem 12rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        &__subtitle{
+            font-size: 0.9rem;
+            font-weight: 500;
+            font-style: italic;
+            color: $secondary-color;
+            text-align: center;
+        }
+
+        &__title{
+            font-size: 3rem;
+            font-weight: 500;
+            line-height: 2ch;
+            width: min(45rem, 100%);
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        &__grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+
+            &__card{
+                background-color: $gray-color;
+                padding: 2rem;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+
+                &__avatar{
+                    position: absolute;
+                    top: -3rem;
+                    border-radius: 50%;
+                    border: 6px solid $gray-color-1;
+                    //filter: grayscale(1);
+                }
+
+                &__ratings{
+                    display: flex;
+                    align-items: center;
+                    gap: 0.3rem;
+                }
+
+                &__title{
+                    font-size: 1.3rem;
+                    font-weight: 500;
+                    padding-top: 3rem;
+                }
+
+                &__text{
+                    font-size: 0.8rem;
+                    text-align: center;
+                }
+
+                &__divider{
+                    width: 100%;
+                    height: 0.05rem;
+                    background-color: $gray-color-1;
+                    margin: 1rem 0;
+                }
+
+                &__user{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.5rem;
+                    justify-content: center;
+                    align-items: center;
+                    
+                    >h5{
+                        font-size: 1rem;
+                        font-weight: 500;
+                    }
+
+                    > h6{
+                        font-size: 0.8rem;
+                        font-weight: 600;
+                        font-style: italic;
+                        color: $secondary-color;
+                    }
+                }
+            }
+        }
+    }
+</style>

@@ -1,11 +1,18 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import Hero from "@components/pages/about/hero.astro";
+import AboutUs from "@components/pages/home/about.astro";
+import Vision from "@components/pages/about/vision.astro";
+import Values from "@components/pages/about/values.astro";
+import Metrics from "@components/pages/about/metrics.astro";
+import Teams from "@components/pages/about/team.astro";
 ---
 
 <Layout>
-	<h1>ABOUT PAGE (STATIC SITE)</h1>
-
-    <a href="/">Home Page</a>
-    <a href="/admin">Admin Page</a>
-    <a href="/contact">Contact Page</a>
+	<Hero />
+    <AboutUs />
+    <Vision />
+    <Values />
+    <Metrics />
+    <Teams />
 </Layout>
