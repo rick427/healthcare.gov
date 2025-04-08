@@ -1,5 +1,9 @@
 ---
 import { Image } from "astro:assets";
+
+import user_01 from "@assets/user-1.jpg";
+import user_02 from "@assets/user-2.jpg";
+import user_03 from "@assets/user-3.jpg";
 import hero_01 from "@assets/hero-01.png";
 import hero_02 from "@assets/hero-02.jpg";
 ---
@@ -28,9 +32,9 @@ import hero_02 from "@assets/hero-02.jpg";
     <div class="hero__row">
         <span>20+ Medical Specialties</span>
         <figure class="hero__row__figs">
-            <Image width={40} height={40} src="https://media.licdn.com/dms/image/v2/D4D03AQF9nP4Vk3MElg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1671910950823?e=1749686400&v=beta&t=lElG7O4V5iZ7vNaYwHnh5HjmeXzW_M250O8YoJ9i2l8" alt="" />
-            <Image width={40} height={40} src="https://media.licdn.com/dms/image/v2/D4D03AQEGhjgShEf5Sg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1667670329624?e=1749686400&v=beta&t=YYmySaRt2xzEIHAV6vv46A66cuVn7fOdek-RnHCafi0" alt="" />
-            <Image width={40} height={40} src="https://randomuser.me/api/portraits/women/24.jpg" alt="" />
+            <Image width={40} height={40} src={user_01} alt="user-1" />
+            <Image width={40} height={40} src={user_02} alt="user-2" />
+            <Image width={40} height={40} src={user_03} alt="user-3" />
         </figure>
     </div>
 
