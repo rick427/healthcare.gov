@@ -1,0 +1,417 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+
+import user_01 from "@assets/user-1.jpg";
+import user_02 from "@assets/user-2.jpg";
+import user_03 from "@assets/user-3.jpg";
+---
+
+<section class="portal">
+    <div class="portal__grid">
+        <div class="portal__grid__col">
+            <div class="portal__grid__col__row">
+                <div class="portal__grid__col__icon">
+                    <Icon name="bi:card-list" size="18" />
+                </div>
+                <h4 class="portal__grid__col__subtitle">
+                    Total Bookings
+                </h4>
+            </div>
+            <h1 class="portal__grid__col__title">
+                28,300
+            </h1>
+        </div>
+        <div class="portal__grid__col">
+            <div class="portal__grid__col__row">
+                <div class="portal__grid__col__icon">
+                    <Icon name="bi:info-circle-fill" size="18" />
+                </div>
+                <h4 class="portal__grid__col__subtitle">
+                    Pending Approval
+                </h4>
+            </div>
+            <h1 class="portal__grid__col__title">
+                52
+            </h1>
+        </div>
+        <div class="portal__grid__col">
+            <div class="portal__grid__col__row">
+                <div class="portal__grid__col__icon">
+                    <Icon name="bi:person-fill" size="18" />
+                </div>
+                <h4 class="portal__grid__col__subtitle">
+                    New Clients
+                </h4>
+            </div>
+            <h1 class="portal__grid__col__title">
+                16%
+            </h1>
+        </div>
+        <div class="portal__grid__col">
+            <div class="portal__grid__col__row">
+                <div class="portal__grid__col__icon">
+                    <Icon name="bi:person-fill" size="18" />
+                </div>
+                <h4 class="portal__grid__col__subtitle">
+                    Client Dropoff Rate
+                </h4>
+            </div>
+            <h1 class="portal__grid__col__title">
+                8%
+            </h1>
+        </div>
+        <div class="portal__grid__col">
+            <div class="portal__grid__col__row">
+                <div class="portal__grid__col__icon">
+                    <Icon name="bi:person-fill" size="18" />
+                </div>
+                <h4 class="portal__grid__col__subtitle">
+                    Total Gross Revenue
+                </h4>
+            </div>
+            <h1 class="portal__grid__col__title">
+                $580,450,590.57
+            </h1>
+        </div>
+        <div class="portal__grid__col">
+            <div class="portal__grid__col__row">
+                <div class="portal__grid__col__icon">
+                    <Icon name="bi:person-fill" size="18" />
+                </div>
+                <h4 class="portal__grid__col__subtitle">
+                    Total Net Revenue
+                </h4>
+            </div>
+            <h1 class="portal__grid__col__title">
+                $5,450,590.57
+            </h1>
+        </div>
+    </div>
+
+    <div class="portal__divider" />
+
+    <div class="portal__bk">
+        <div class="portal__bk__card">
+            <div class="portal__bk__card__row">
+                <Image src={user_01} alt="user" />
+                <h3>Amanda Chavez</h3>
+            </div>
+
+            <div class="portal__bk__card__stack">
+                <p>Service</p>
+                <h4>Physiotherapy</h4>
+            </div>
+
+            <div class="portal__bk__card__group">
+                <div class="portal__bk__card__stack">
+                    <p>Date</p>
+                    <h4>10 Apr, 2025</h4>
+                </div>
+                <div class="portal__bk__card__stack">
+                    <p>Time</p>
+                    <h4>10:00 - 12:00</h4>
+                </div>
+            </div>
+
+            <div class="portal__bk__card__group">
+                <button>
+                    Accept Booking
+                </button>
+                <button>
+                    Decline Booking
+                </button>
+            </div>
+        </div>
+
+        <div class="portal__bk__card">
+            <div class="portal__bk__card__row">
+                <Image src={user_02} alt="user" />
+                <h3>Fiona Wade</h3>
+            </div>
+
+            <div class="portal__bk__card__stack">
+                <p>Service</p>
+                <h4>Angioplasty</h4>
+            </div>
+
+            <div class="portal__bk__card__group">
+                <div class="portal__bk__card__stack">
+                    <p>Date</p>
+                    <h4>9 Apr, 2025</h4>
+                </div>
+                <div class="portal__bk__card__stack">
+                    <p>Time</p>
+                    <h4>10:00 - 12:00</h4>
+                </div>
+            </div>
+
+            <div class="portal__bk__card__group">
+                <button>
+                    Accept Booking
+                </button>
+                <button>
+                    Decline Booking
+                </button>
+            </div>
+        </div>
+
+        <div class="portal__bk__card">
+            <div class="portal__bk__card__row">
+                <Image src={user_03} alt="user" />
+                <h3>Beatrice Carrol</h3>
+            </div>
+
+            <div class="portal__bk__card__stack">
+                <p>Service</p>
+                <h4>Rhinoplasty</h4>
+            </div>
+
+            <div class="portal__bk__card__group">
+                <div class="portal__bk__card__stack">
+                    <p>Date</p>
+                    <h4>10 Apr, 2025</h4>
+                </div>
+                <div class="portal__bk__card__stack">
+                    <p>Time</p>
+                    <h4>10:00 - 12:00</h4>
+                </div>
+            </div>
+
+            <div class="portal__bk__card__group">
+                <button>
+                    Accept Booking
+                </button>
+                <button>
+                    Decline Booking
+                </button>
+            </div>
+        </div>
+
+        <div class="portal__bk__card">
+            <div class="portal__bk__card__row">
+                <Image src={user_01} alt="user" />
+                <h3>Jasmine Palmer</h3>
+            </div>
+
+            <div class="portal__bk__card__stack">
+                <p>Service</p>
+                <h4>X-Ray</h4>
+            </div>
+
+            <div class="portal__bk__card__group">
+                <div class="portal__bk__card__stack">
+                    <p>Date</p>
+                    <h4>12 Apr, 2025</h4>
+                </div>
+                <div class="portal__bk__card__stack">
+                    <p>Time</p>
+                    <h4>10:00 - 12:00</h4>
+                </div>
+            </div>
+
+            <div class="portal__bk__card__group">
+                <button>
+                    Accept Booking
+                </button>
+                <button>
+                    Decline Booking
+                </button>
+            </div>
+        </div>
+
+        <div class="portal__bk__card">
+            <div class="portal__bk__card__row">
+                <Image src={user_02} alt="user" />
+                <h3>Randy Elliot</h3>
+            </div>
+
+            <div class="portal__bk__card__stack">
+                <p>Service</p>
+                <h4>Covid Test</h4>
+            </div>
+
+            <div class="portal__bk__card__group">
+                <div class="portal__bk__card__stack">
+                    <p>Date</p>
+                    <h4>12 Apr, 2025</h4>
+                </div>
+                <div class="portal__bk__card__stack">
+                    <p>Time</p>
+                    <h4>10:00 - 12:00</h4>
+                </div>
+            </div>
+
+            <div class="portal__bk__card__group">
+                <button>
+                    Accept Booking
+                </button>
+                <button>
+                    Decline Booking
+                </button>
+            </div>
+        </div>
+
+        <div class="portal__bk__card">
+            <div class="portal__bk__card__row">
+                <Image src={user_02} alt="user" />
+                <h3>Christine Powell</h3>
+            </div>
+
+            <div class="portal__bk__card__stack">
+                <p>Service</p>
+                <h4>Radiology</h4>
+            </div>
+
+            <div class="portal__bk__card__group">
+                <div class="portal__bk__card__stack">
+                    <p>Date</p>
+                    <h4>15 Apr, 2025</h4>
+                </div>
+                <div class="portal__bk__card__stack">
+                    <p>Time</p>
+                    <h4>10:00 - 12:00</h4>
+                </div>
+            </div>
+
+            <div class="portal__bk__card__group">
+                <button>
+                    Accept Booking
+                </button>
+                <button>
+                    Decline Booking
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style lang="scss" scoped>
+    @use "@/styles/variables" as *;
+
+    [data-icon]{
+        color: $white-color;
+    }
+
+    .portal{
+        padding: 6rem 12rem;
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+
+        &__grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+
+            &__col{
+                background-color: $gray-color;
+                border: 1px solid $gray-color-1;
+                padding: 1.5rem;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                &__row{
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                }
+
+                &__icon{
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    background-color: $secondary-color;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                &__subtitle{
+                    font-size: 0.9rem;
+                    font-weight: 500;
+                }
+
+                &__title{
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        &__divider{
+            width: 100%;
+            height: 0.05rem;
+            background-color: $gray-color-1;
+        }
+
+        &__bk{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+
+            &__card{
+                background-color: $gray-color;
+                border: 1px solid $gray-color-1;
+                padding: 2rem;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                &__row{
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+
+                    > img{
+                        width: 2.5rem;
+                        height: 2.5rem;
+                        border-radius: 50%;
+                        border: 1px solid $gray-color-1;
+                    }
+
+                    > h3{
+                        font-size: 1rem;
+                        font-weight: 600;
+                    }
+                }
+
+                &__stack{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.2rem;
+
+                    >p{
+                        font-size: 0.8rem;
+                        opacity: 0.6;
+                    }
+
+                    >h4{
+                        font-size: 0.8rem;
+                        font-weight: 600;
+                    }
+                }
+
+                &__group{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    button{
+                        padding: 0.8rem 1.5rem;
+                        background-color: $secondary-color;
+                        border: 1px solid $secondary-color;
+                        font-size: 0.8rem;
+                        color: $white-color;
+                        cursor: pointer;
+
+                        &:last-child{
+                            background-color: $primary-color;
+                            border: 1px solid $primary-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+</style>
