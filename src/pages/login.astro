@@ -12,7 +12,7 @@ import Layout from "@layouts/Layout.astro";
                 Don't have a Healthcare account?
                 <a href="/register">Create an account</a> to access our systems.
             </p>
-            <form class="login__el__form" method="POST" action="/login">
+            <form class="login__el__form" method="POST">
                 <div class="login__el__form__group">
                     <label for="email">Email Address</label>
                     <input name="email" type="email" placeholder="Enter your email address" required>
@@ -32,48 +32,6 @@ import Layout from "@layouts/Layout.astro";
         </div>
     </section>
 </Layout>
-
-<script is:inline>
-    document.addEventListener("DOMContentLoaded", () => {
-        const form = document.querySelector(".login__el__form");
-        const loginButton = document.getElementById('loginBtn');
-
-        if(form){
-            form.addEventListener("submit", async (e) => {
-                e.preventDefault();
-
-                loginButton.textContent = "Loading ..."
-                loginButton.disabled = true;
-
-                const email = form.elements.email.value;
-                const password = form.elements.password.value;
-
-                try {
-                    // Simulate a successful login with a delay of 3s
-                    await new Promise(resolve => setTimeout(resolve, 3000));
-                    const userRole = (email === 'test@test.com' && password === '12345') ? 'ADMIN' : 'GUEST';
-
-                    form.reset();
-
-                    // Set cookies
-                    document.cookie = `email=${encodeURIComponent(email)}; path=/`;
-                    document.cookie = `role=${userRole}; path=/`;
-
-                    // Navigate to the admin page
-                    if(userRole === "ADMIN") window.location.href = "/admin";
-                    else window.location.href = "/";
-                } catch (error) {
-                    console.error("Login failed", error);
-                } finally{
-                    loginButton.textContent = "Login to Healthcare";
-                    loginButton.disabled = false;
-                }
-            });
-        }else {
-            console.log("Login form not found!")
-        }
-    })
-</script>
 
 <style lang="scss" scoped>
     @use "@/styles/variables" as *;
