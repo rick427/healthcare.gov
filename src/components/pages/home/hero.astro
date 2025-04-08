@@ -1,5 +1,10 @@
 ---
 import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+
+import user_01 from "@assets/user-1.jpg";
+import user_02 from "@assets/user-2.jpg";
+import user_03 from "@assets/user-3.jpg";
 import hero_01 from "@assets/hero-01.png";
 import hero_02 from "@assets/hero-02.jpg";
 ---
@@ -28,9 +33,9 @@ import hero_02 from "@assets/hero-02.jpg";
     <div class="hero__row">
         <span>20+ Medical Specialties</span>
         <figure class="hero__row__figs">
-            <Image width={40} height={40} src="https://media.licdn.com/dms/image/v2/D4D03AQF9nP4Vk3MElg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1671910950823?e=1749686400&v=beta&t=lElG7O4V5iZ7vNaYwHnh5HjmeXzW_M250O8YoJ9i2l8" alt="" />
-            <Image width={40} height={40} src="https://media.licdn.com/dms/image/v2/D4D03AQEGhjgShEf5Sg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1667670329624?e=1749686400&v=beta&t=YYmySaRt2xzEIHAV6vv46A66cuVn7fOdek-RnHCafi0" alt="" />
-            <Image width={40} height={40} src="https://randomuser.me/api/portraits/women/24.jpg" alt="" />
+            <Image width={40} height={40} src={user_01} alt="user-1" />
+            <Image width={40} height={40} src={user_02} alt="user-2" />
+            <Image width={40} height={40} src={user_03} alt="user-3" />
         </figure>
     </div>
 
@@ -40,12 +45,20 @@ import hero_02 from "@assets/hero-02.jpg";
 
     <figure class="hero__vid">
         <Image src={hero_02} alt="hero-02" />
+        <div class="hero__vid__control">
+            <Icon name="bi:play-circle-fill" size="30" />
+            <p>How it works</p>
+        </div>
     </figure>
 </section>
 
 
 <style lang="scss" scoped>
     @use "@/styles/variables" as *;
+
+    [data-icon]{
+        color: $secondary-color;
+    }
 
     .hero{
         min-height: 100vh;
@@ -158,7 +171,7 @@ import hero_02 from "@assets/hero-02.jpg";
             width: 12rem;
             height: 10rem;
             position: absolute;
-            right: 32rem;
+            right: 30rem;
             bottom: 10rem;
             border-radius: 0.3rem;
             overflow: hidden;
@@ -167,6 +180,21 @@ import hero_02 from "@assets/hero-02.jpg";
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
+            }
+
+            &__control{
+                position: absolute;
+                z-index: 1;
+                bottom: 0;
+                width: 100%;
+                display: flex;
+                padding: 1rem;
+                align-items: center;
+                gap: 0.5rem;
+
+                p{
+                    color: $white-color;
+                }
             }
         }
     }

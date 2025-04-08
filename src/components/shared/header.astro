@@ -1,6 +1,13 @@
 ---
 import { Image } from "astro:assets";
+import { parse } from "cookie";
+
 import logo from "@assets/logo.png";
+
+// Parse cookies from the request headers
+const rawCookies = Astro.request.headers.get('cookie') || '';
+const cookies = parse(rawCookies);
+const isLoggedIn = cookies.email && cookies.role === 'ADMIN';
 ---
 
 <header class="header">

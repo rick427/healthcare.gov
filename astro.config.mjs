@@ -18,5 +18,5 @@ export default defineConfig({
     include: {
       bi: ["*"] // (Default) Loads the entire "bi" icon set
     }
-  })]
+  })],
 });

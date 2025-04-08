@@ -1,6 +1,10 @@
 ---
 import { Image } from "astro:assets";
 import { Icon } from 'astro-icon/components';
+
+import review_01 from "@assets/review-1.jpg";
+import review_02 from "@assets/review-2.jpg";
+import review_03 from "@assets/review-3.jpg";
 ---
 
 <section class="reviews">
@@ -25,11 +29,11 @@ import { Icon } from 'astro-icon/components';
             </p>
             <div class="reviews__grid__card__divider" />
             <div class="reviews__grid__card__user">
-                <h5>Richard Njoku</h5>
+                <h5>Rake Mahendra</h5>
                 <h6> Tech Lead</h6>
             </div>
 
-            <Image class="reviews__grid__card__avatar" width={100} height={100} src="https://media.licdn.com/dms/image/v2/D4D03AQF9nP4Vk3MElg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1671910950823?e=1749686400&v=beta&t=lElG7O4V5iZ7vNaYwHnh5HjmeXzW_M250O8YoJ9i2l8"  alt="user" />
+            <Image class="reviews__grid__card__avatar" width={100} height={100} src={review_01}  alt="user-1" />
         </div>
 
         <div class="reviews__grid__card">
@@ -47,11 +51,11 @@ import { Icon } from 'astro-icon/components';
             </p>
             <div class="reviews__grid__card__divider" />
             <div class="reviews__grid__card__user">
-                <h5>Kevin Omyonga</h5>
-                <h6> Matatu Driver</h6>
+                <h5>Nadia Kusumo</h5>
+                <h6> Financial Analyst</h6>
             </div>
 
-            <Image class="reviews__grid__card__avatar" width={100} height={100} src="https://media.licdn.com/dms/image/v2/D4D03AQEGhjgShEf5Sg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1667670329624?e=1749686400&v=beta&t=YYmySaRt2xzEIHAV6vv46A66cuVn7fOdek-RnHCafi0"  alt="user" />
+            <Image class="reviews__grid__card__avatar" width={100} height={100} src={review_02}  alt="user-2" />
         </div>
 
         <div class="reviews__grid__card">
@@ -69,11 +73,11 @@ import { Icon } from 'astro-icon/components';
             </p>
             <div class="reviews__grid__card__divider" />
             <div class="reviews__grid__card__user">
-                <h5>Kevin Feige</h5>
-                <h6>Head of Marvel Studios</h6>
+                <h5>Damar Nugroho</h5>
+                <h6>Lecturer</h6>
             </div>
 
-            <Image class="reviews__grid__card__avatar" width={100} height={100} src="https://randomuser.me/api/portraits/men/67.jpg"  alt="user" />
+            <Image class="reviews__grid__card__avatar" width={100} height={100} src={review_03}  alt="user-3" />
         </div>
     </div>
 </section>
