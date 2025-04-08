@@ -28,6 +28,17 @@ import vision_02 from "@assets/about-us/vision-2.png";
 
     <div class="vision__row">
         <Image class="vision__row__img-2" src={vision_02} alt="vision-2" />
+        <div class="vision__row__quote">
+            <div class="vision__row__quote__badge">Our Vision</div>
+            <h3 class="vision__row__quote__title">
+                "We strive to make top-tier medical services accessible to 
+                everyone, ensuring a healthier society."
+            </h3>
+            <div class="vision__row__quote__user">
+                <h5>Alya Prasetyo</h5>
+                <p>Founder & CEO of Healthcare</p>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -97,7 +108,44 @@ import vision_02 from "@assets/about-us/vision-2.png";
                 width: 25rem;
                 height: 30rem;
                 object-fit: contain;
-                border: 1px solid red;
+            }
+
+            &__quote{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.5rem;
+
+                &__badge{
+                    padding: 0.5rem 1rem; 
+                    border: 1px solid $gray-color-1;
+                    background-color: $white-color;
+                    font-size: 0.8rem;
+                    font-weight: 600;
+                }
+
+                &__title{
+                    font-size: 2.2rem;
+                    font-weight: 500;
+                    width: min(45rem, 100%);
+                    line-height: 2ch;
+                }
+
+                &__user{
+                    display: flex;
+                    flex-direction: column;
+
+                    >h5{
+                        font-size: 1.1rem;
+                        font-weight: 500;
+                    }
+
+                    >p{
+                        font-size: 0.9rem;
+                        font-style: italic;
+                        color: $secondary-color;
+                    }
+                }
             }
         }
     }

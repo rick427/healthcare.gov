@@ -1,17 +1,10 @@
 ---
 import Layout from "@layouts/Layout.astro";
-export const prerender = false; //On demand SSR, disables static pre-rendering on this page
+import Hero from "@components/pages/admin/hero.astro";
 
-export async function get() {
-  await new Promise((resolve) => setTimeout(resolve, 5000)); // Delay for 3 seconds
-  return new Response(JSON.stringify({ message: "Delayed response" }), { status: 200 });
-}
+export const prerender = false; //Disable static pre-rendering
 ---
 
 <Layout>
-	<h1>ADMIN PAGE (SERVER GENERATED)</h1>
-
-    <a href="/">Home Page</a>
-    <a href="/about">About Page</a>
-    <a href="/contact">Contact Page</a>
+  <Hero />
 </Layout>

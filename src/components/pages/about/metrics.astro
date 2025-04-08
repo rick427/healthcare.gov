@@ -5,6 +5,7 @@ import metrics_bg from "@assets/about-us/metrics.jpg";
 
 <section class="metrics">
     <Image class="metrics__img" src={metrics_bg} alt="metrics" />
+
     <div class="metrics__col">
         <p class="metrics__col__subtitle">
             Skilled Professionals, Superior Care
@@ -12,6 +13,31 @@ import metrics_bg from "@assets/about-us/metrics.jpg";
         <h1 class="metrics__col__title">
             Expertise You Can Trust for Your Health and Well-Being
         </h1>
+
+        <div class="metrics__col__stack">
+            <div class="metrics__col__box">
+                <div class="metrics__col__box__group">
+                    <h4>Medical Diagnosis Accuracy</h4>
+                    <h4>98%</h4>
+                </div>
+                <div class="metrics__col__box__progress" />
+            </div>
+            <div class="metrics__col__box">
+                <div class="metrics__col__box__group">
+                    <h4>Emergency Response Efficiency</h4>
+                    <h4>95%</h4>
+                </div>
+                <div class="metrics__col__box__progress" />
+            </div>
+            <div class="metrics__col__box">
+                <div class="metrics__col__box__group">
+                    <h4>Technological Advancement</h4>
+                    <h4>90%</h4>
+                </div>
+                <div class="metrics__col__box__progress" />
+            </div>
+        </div>
+
         <a class="metrics__col__btn" href="/">
             Explore our Expertise
         </a>
@@ -25,6 +51,7 @@ import metrics_bg from "@assets/about-us/metrics.jpg";
         padding: 8rem 12rem;
         display: flex;
         align-items: flex-start;
+        justify-content: space-between;
         gap: 2rem;
         background-color: $gray-color;
 
@@ -36,8 +63,8 @@ import metrics_bg from "@assets/about-us/metrics.jpg";
         &__col{
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
-            border: 1px solid red;
+            gap: 2rem;
+            width: min(32rem, 100%);
 
             &__subtitle{
                 font-size: 0.9rem;
@@ -50,7 +77,45 @@ import metrics_bg from "@assets/about-us/metrics.jpg";
                 font-size: 2.8rem;
                 font-weight: 500;
                 line-height: 2ch;
-                width: min(45rem, 100%);
+            }
+
+            &__stack{
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+                margin-top: 1.5rem;
+            }
+
+            &__box{
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+
+                &__group{
+                    display: flex;
+                    justify-content: space-between;
+
+                    >h4{
+                        font-weight: 500;
+                        font-size: 1.1rem;
+                    }
+                }
+
+                &__progress{
+                    width: 100%;
+                    height: 1rem;
+                    position: relative;
+                    background-color: $secondary-color;
+
+                    &:before{
+                        content: "";
+                        position: absolute;
+                        width: 10%;
+                        height: 100%;
+                        right: 0;
+                        background-color: $white-color;
+                    }
+                }
             }
 
             &__btn{

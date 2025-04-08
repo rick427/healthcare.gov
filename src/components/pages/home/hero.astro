@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
 
 import user_01 from "@assets/user-1.jpg";
 import user_02 from "@assets/user-2.jpg";
@@ -44,12 +45,20 @@ import hero_02 from "@assets/hero-02.jpg";
 
     <figure class="hero__vid">
         <Image src={hero_02} alt="hero-02" />
+        <div class="hero__vid__control">
+            <Icon name="bi:play-circle-fill" size="30" />
+            <p>How it works</p>
+        </div>
     </figure>
 </section>
 
 
 <style lang="scss" scoped>
     @use "@/styles/variables" as *;
+
+    [data-icon]{
+        color: $secondary-color;
+    }
 
     .hero{
         min-height: 100vh;
@@ -162,7 +171,7 @@ import hero_02 from "@assets/hero-02.jpg";
             width: 12rem;
             height: 10rem;
             position: absolute;
-            right: 32rem;
+            right: 30rem;
             bottom: 10rem;
             border-radius: 0.3rem;
             overflow: hidden;
@@ -171,6 +180,21 @@ import hero_02 from "@assets/hero-02.jpg";
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
+            }
+
+            &__control{
+                position: absolute;
+                z-index: 1;
+                bottom: 0;
+                width: 100%;
+                display: flex;
+                padding: 1rem;
+                align-items: center;
+                gap: 0.5rem;
+
+                p{
+                    color: $white-color;
+                }
             }
         }
     }

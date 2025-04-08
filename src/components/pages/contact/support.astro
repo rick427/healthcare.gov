@@ -1,0 +1,176 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+
+import user_01 from "@assets/user-1.jpg";
+import user_02 from "@assets/user-2.jpg";
+import user_03 from "@assets/user-3.jpg";
+import contact_bg from "@assets/contact-bg.jpg";
+---
+
+<section class="support">
+    <div class="support__row">
+        <div class="support__ctx">
+            <p class="support__ctx__subtitle">
+                Get in Touch
+            </p>
+            <h1 class="support__ctx__title">
+                We're Here to Assist You Anytime
+            </h1>
+        </div>
+
+        <div class="support__users">
+            <figure class="support__users__avatars">
+                <Image width={60} height={60} src={user_01} alt="user-1" />
+                <Image width={60} height={60} src={user_02} alt="user-2" />
+                <Image width={60} height={60} src={user_03} alt="user-3" />
+            </figure>
+            <h6 class="support__users__title">
+                Our Experts Are Ready To Serve You
+            </h6>
+        </div>
+    </div>
+
+    <div class="support__grid">
+        <div class="support__grid__col">
+            <div class="support__grid__col__icon">
+                <Icon name="bi:telephone-fill" size="22" />
+            </div>
+            <div class="support__grid__col__ctx">
+                <h4>Call Us</h4>
+                <p>+62 812-3456-7890</p>
+            </div>
+        </div>
+        <div class="support__grid__col">
+            <div class="support__grid__col__icon">
+                <Icon name="bi:envelope-fill" size="22" />
+            </div>
+            <div class="support__grid__col__ctx">
+                <h4>Email Us</h4>
+                <p>support@healthcare.gov</p>
+            </div>
+        </div>
+        <div class="support__grid__col">
+            <div class="support__grid__col__icon">
+                <Icon name="bi:pin-fill" size="22" />
+            </div>
+            <div class="support__grid__col__ctx">
+                <h4>Location</h4>
+                <p>123 Wellness, Jakarta, Indonesia</p>
+            </div>
+        </div>
+    </div>
+
+    <Image class="support__bg" src={contact_bg} alt="contact-us" />
+</section>
+
+<style lang="scss" scoped>
+    @use "@/styles/variables" as *;
+
+    [data-icon]{
+        color: $white-color;
+    }
+
+    .support{
+        padding: 8rem 12rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        &__row{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        &__ctx{
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+
+            &__subtitle{
+                font-size: 0.9rem;
+                font-weight: 500;
+                font-style: italic;
+                color: $secondary-color;
+            }
+
+            &__title{
+                font-size: 3rem;
+                font-weight: 500;
+                line-height: 2ch;
+                width: min(30rem, 100%);
+            }
+        }
+
+        &__users{
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+
+            &__avatars{
+                display: flex;
+                align-items: center;
+
+                img{
+                    direction: rtl;
+                    border-radius: 50%;
+                    text-align: right;
+                    margin-right: -10px;
+                    padding-right: -10px;
+                    border: 1px solid white;
+                }
+            }
+
+            &__title{
+                font-size: 1.2rem;
+                font-weight: 500;
+            }
+        }
+
+        &__grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+
+            &__col{
+                background-color: $gray-color;
+                border: 1px solid $gray-color-1;
+                padding: 2rem;
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+
+                &__icon{
+                    width: 3rem;
+                    height: 3rem;
+                    background-color: $black-color;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                &__ctx{
+                    display: flex;
+                    flex-direction: column;
+
+                    >h4{
+                        font-size: 1.1rem;
+                        font-weight: 600;
+                    }
+
+                    >p{
+                        font-size: 0.9rem;
+                        opacity: 0.6;
+                    }
+                }
+            }
+        }
+
+        &__bg{
+            width: 100%;
+            height: 28rem;
+            object-fit: cover;
+        }
+    }
+</style>
